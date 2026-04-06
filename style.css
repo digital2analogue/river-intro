@@ -1,0 +1,141 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #161614;
+  --text: #e8e4dc;
+  --text-muted: #7a7570;
+  --link: #e8e4dc;
+  --link-hover: #c8b89a;
+  --accent: #c8b89a;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 1.5rem;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 18vh 0 10vh;
+  width: 100%;
+}
+
+/* Intro */
+
+.intro {
+  margin-bottom: 4rem;
+}
+
+.intro p {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  line-height: 1.65;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.intro p + p {
+  margin-top: 1.25em;
+}
+
+/* Work section */
+
+.work {
+  margin-bottom: 4rem;
+}
+
+.work h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.work ul {
+  list-style: none;
+}
+
+.work ul li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 0.55rem 0;
+  border-top: 1px solid #2a2926;
+}
+
+.work ul li:last-child {
+  border-bottom: 1px solid #2a2926;
+}
+
+.work ul li span {
+  color: var(--text-muted);
+}
+
+/* Contact */
+
+.contact p {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Links */
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 184, 154, 0.35);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration-color: rgba(200, 184, 154, 0.8);
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration-color: rgba(200, 184, 154, 0.4);
+  font-style: normal;
+}
+
+.contact a:hover {
+  text-decoration-color: rgba(200, 184, 154, 0.9);
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 1.25rem;
+  }
+
+  main {
+    padding: 12vh 0 8vh;
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+  }
+}
