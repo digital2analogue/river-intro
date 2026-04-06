@@ -109,7 +109,7 @@ main {
 a {
   color: var(--link);
   text-decoration: underline;
-  text-decoration-color: rgba(74, 222, 110, 0.2);
+  text-decoration-color: var(--text-primary);
   text-underline-offset: 3px;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
