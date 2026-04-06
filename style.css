@@ -109,24 +109,19 @@ main {
 a {
   color: var(--link);
   text-decoration: underline;
-  text-decoration-color: rgba(74, 222, 110, 0.2);
+  text-decoration-color: var(--accent);
   text-underline-offset: 3px;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
   color: var(--link-hover);
-  text-decoration-color: rgba(74, 222, 110, 0.7);
+  text-decoration-color: var(--accent);
 }
 
 .contact a {
   color: var(--accent);
-  text-decoration-color: rgba(74, 222, 110, 0.25);
   font-style: normal;
-}
-
-.contact a:hover {
-  text-decoration-color: rgba(74, 222, 110, 0.8);
 }
 
 /* Mobile */
