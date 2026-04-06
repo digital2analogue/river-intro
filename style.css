@@ -5,12 +5,15 @@
 }
 
 :root {
-  --bg: #161614;
-  --text: #e8e4dc;
-  --text-muted: #7a7570;
-  --link: #e8e4dc;
-  --link-hover: #c8b89a;
-  --accent: #c8b89a;
+  --bg-primary: #0A0D0A;
+  --bg-secondary: #121612;
+  --text-primary: #C8CFC4;
+  --text-secondary: #A0A89A;
+  --text-muted: #7A8274;
+  --border-color: #1E241E;
+  --link: #C8CFC4;
+  --link-hover: #4ADE6E;
+  --accent: #4ADE6E;
 }
 
 html {
@@ -20,9 +23,9 @@ html {
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 300;
   min-height: 100vh;
   display: flex;
@@ -44,11 +47,12 @@ main {
 }
 
 .intro p {
-  font-family: 'Lora', serif;
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
   font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  line-height: 1.65;
-  color: var(--text);
+  line-height: 1.72;
+  color: var(--text-primary);
   font-weight: 400;
+  letter-spacing: 0.005em;
 }
 
 .intro p + p {
@@ -62,8 +66,8 @@ main {
 }
 
 .work h2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 400;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -76,14 +80,15 @@ main {
 }
 
 .work ul li {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 0.95rem;
   line-height: 1.5;
   padding: 0.55rem 0;
-  border-top: 1px solid #2a2926;
+  border-top: 1px solid var(--border-color);
 }
 
 .work ul li:last-child {
-  border-bottom: 1px solid #2a2926;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .work ul li span {
@@ -93,9 +98,9 @@ main {
 /* Contact */
 
 .contact p {
-  font-family: 'Lora', serif;
+  font-family: 'Spectral', Georgia, serif;
   font-size: 1rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-style: italic;
 }
 
@@ -104,24 +109,24 @@ main {
 a {
   color: var(--link);
   text-decoration: underline;
-  text-decoration-color: rgba(200, 184, 154, 0.35);
+  text-decoration-color: rgba(74, 222, 110, 0.2);
   text-underline-offset: 3px;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
   color: var(--link-hover);
-  text-decoration-color: rgba(200, 184, 154, 0.8);
+  text-decoration-color: rgba(74, 222, 110, 0.7);
 }
 
 .contact a {
   color: var(--accent);
-  text-decoration-color: rgba(200, 184, 154, 0.4);
+  text-decoration-color: rgba(74, 222, 110, 0.25);
   font-style: normal;
 }
 
 .contact a:hover {
-  text-decoration-color: rgba(200, 184, 154, 0.9);
+  text-decoration-color: rgba(74, 222, 110, 0.8);
 }
 
 /* Mobile */
