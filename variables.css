@@ -3,51 +3,55 @@
  */
 
 :root {
-  --color-green-200: #c8cfc4; /** Light green (primary text) — AA 12.26:1 on 950 */
-  --color-green-400: #a0a89a; /** Soft green (secondary text) — AA 7.97:1 on 950 */
-  --color-green-500: #7a9e80; /** Sage green (intermediate) */
-  --color-green-600: #8b9683; /** Muted sage (labels, tertiary text) — AA 6.32:1 on 950 */
-  --color-green-900: #1e241e; /** Dark green (borders, secondary bg) */
-  --color-green-950: #0a0d0a; /** Near-black green (background) */
-  --color-green-accent: #4ade6e; /** Terminal green (hover/interactive) — AAA 11.13:1 on 950 */
-  --color-neutral-white: #ffffff;
+  /* Primitive: Colors */
+  --color-green-950: #0A0D0A;
+  --color-green-900: #1E241E;
+  --color-green-600: #8B9683;
+  --color-green-500: #7A9E80;
+  --color-green-400: #A0A89A;
+  --color-green-200: #C8CFC4;
+  --color-green-accent: #4ADE6E;
+  --color-neutral-white: #FFFFFF;
   --color-neutral-black: #000000;
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 48px;
-  --space-2xl: 80px;
-  --font-family-sans: 'Space Grotesk'; /** Geometric sans — headers, UI */
-  --font-family-serif: Spectral; /** Humanist serif — body text */
-  --font-family-mono: 'JetBrains Mono'; /** Code blocks — reserved */
-  --font-weight-light: 300; /** Display/heading weight */
-  --font-weight-regular: 400; /** Body/UI weight */
-  --font-weight-medium: 500; /** Emphasis — reserved */
-  --font-size-xs: 0.75rem; /** 12px — fine print, captions */
-  --font-size-sm: 0.875rem; /** 14px — UI labels, nav */
-  --font-size-base: 1.125rem; /** 18px — body text */
-  --font-size-md: 1.25rem; /** 20px — content headings h2 */
-  --font-size-lg: 1.5rem; /** 24px — content headings h1 */
-  --font-size-xl: 1.75rem; /** 28px — title-small / section labels */
-  --font-size-2xl: 2rem; /** 32px — title-medium / intro text */
-  --font-size-3xl: 2.5rem; /** 40px — title-large / hero */
-  --font-line-height-tight: 1.1; /** Titles and display text */
-  --font-line-height-snug: 1.25; /** Headings */
-  --font-line-height-normal: 1.6; /** Body text */
-  --font-line-height-relaxed: 1.7; /** Long-form reading */
-  --color-bg-primary: var(--color-green-950);
-  --color-bg-secondary: var(--color-green-900);
-  --color-foreground-primary: var(--color-green-200);
-  --color-foreground-secondary: var(--color-green-400);
-  --color-foreground-muted: var(--color-green-600);
-  --color-foreground-accent: var(--color-green-accent);
-  --color-border-default: var(--color-green-900);
-  --font-title-large: var(--font-weight-light) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans); /** Hero text, page titles */
-  --font-title-medium: var(--font-weight-light) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans); /** Intro paragraphs, blog h1, featured text */
-  --font-title-small: var(--font-weight-medium) var(--font-size-xl)/var(--font-line-height-snug) var(--font-family-sans); /** Section labels, blog h2, category headers */
-  --font-body-medium: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-normal) var(--font-family-serif); /** Default body/paragraph text */
-  --font-body-small: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-normal) var(--font-family-serif); /** Secondary body text, smaller prose */
-  --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans); /** Navigation, button text, standard UI */
-  --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans); /** Meta text, captions, fine print */
+
+  /* Semantic: Colors */
+  --color-bg-primary: #0A0D0A;
+  --color-bg-secondary: #1E241E;
+  --color-foreground-primary: #C8CFC4;
+  --color-foreground-secondary: #A0A89A;
+  --color-foreground-muted: #8B9683;
+  --color-foreground-accent: #4ADE6E;
+  --color-border-default: #1E241E;
+
+  /* Primitive: Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2.5rem;
+  --font-line-height-tight: 1.1;
+  --font-line-height-snug: 1.25;
+  --font-line-height-normal: 1.5;
+  --font-line-height-relaxed: 1.75;
+  --font-family-sans: 'Space Grotesk', sans-serif;
+  --font-family-serif: 'Source Serif 4', Georgia, serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Semantic: Typography (composite shorthand) */
+  --font-title-large: 400 2.5rem/1.1 'Space Grotesk', sans-serif;
+  --font-title-medium: 400 1.5rem/1.25 'Space Grotesk', sans-serif;
+  --font-title-small: 400 1.125rem/1.25 'Space Grotesk', sans-serif;
+  --font-body-large: 400 1rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-body-medium: 400 0.875rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-body-small: 400 0.75rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-label-large: 400 1rem/1.25 'Space Grotesk', sans-serif;
+  --font-label-medium: 400 0.875rem/1.25 'Space Grotesk', sans-serif;
+  --font-label-small: 400 0.75rem/1.25 'Space Grotesk', sans-serif;
 }

@@ -4,55 +4,57 @@
  */
 
 :root {
-  --color-green-200: #c8cfc4;
-  --color-green-400: #a0a89a;
-  --color-green-500: #7a9e80;
-  --color-green-600: #8b9683;
-  --color-green-900: #1e241e;
-  --color-green-950: #0a0d0a;
-  --color-green-accent: #4ade6e;
-  --color-neutral-white: #ffffff;
+  /* Primitive: Colors */
+  --color-green-950: #0A0D0A;
+  --color-green-900: #1E241E;
+  --color-green-600: #8B9683;
+  --color-green-500: #7A9E80;
+  --color-green-400: #A0A89A;
+  --color-green-200: #C8CFC4;
+  --color-green-accent: #4ADE6E;
+  --color-neutral-white: #FFFFFF;
   --color-neutral-black: #000000;
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 48px;
-  --space-2xl: 80px;
-  --font-family-sans: 'Space Grotesk';
-  --font-family-serif: Spectral;
-  --font-family-mono: 'JetBrains Mono';
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
+
+  /* Semantic: Colors */
+  --color-bg-primary: #0A0D0A;
+  --color-bg-secondary: #1E241E;
+  --color-foreground-primary: #C8CFC4;
+  --color-foreground-secondary: #A0A89A;
+  --color-foreground-muted: #8B9683;
+  --color-foreground-accent: #4ADE6E;
+  --color-border-default: #1E241E;
+
+  /* Primitive: Typography */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
-  --font-size-md: 1.25rem;
-  --font-size-lg: 1.5rem;
-  --font-size-xl: 1.75rem;
-  --font-size-2xl: 2rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
   --font-size-3xl: 2.5rem;
   --font-line-height-tight: 1.1;
   --font-line-height-snug: 1.25;
-  --font-line-height-normal: 1.6;
-  --font-line-height-relaxed: 1.7;
-  --color-bg-primary: var(--color-green-950);
-  --color-bg-secondary: var(--color-green-900);
-  --color-foreground-primary: var(--color-green-200);
-  --color-foreground-secondary: var(--color-green-400);
-  --color-foreground-muted: var(--color-green-600);
-  --color-foreground-accent: var(--color-green-accent);
-  --color-border-default: var(--color-green-900);
-  --font-title-large: var(--font-weight-regular) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans);
-  --font-title-medium: var(--font-weight-regular) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-title-small: var(--font-weight-regular) var(--font-size-lg)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-body-large: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-normal) var(--font-family-serif);
-  --font-body-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-normal) var(--font-family-serif);
-  --font-body-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-normal) var(--font-family-serif);
-  --font-label-large: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans);
+  --font-line-height-normal: 1.5;
+  --font-line-height-relaxed: 1.75;
+  --font-family-sans: 'Space Grotesk', sans-serif;
+  --font-family-serif: 'Source Serif 4', Georgia, serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Semantic: Typography (composite shorthand) */
+  --font-title-large: 400 2.5rem/1.1 'Space Grotesk', sans-serif;
+  --font-title-medium: 400 1.5rem/1.25 'Space Grotesk', sans-serif;
+  --font-title-small: 400 1.125rem/1.25 'Space Grotesk', sans-serif;
+  --font-body-large: 400 1rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-body-medium: 400 0.875rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-body-small: 400 0.75rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-label-large: 400 1rem/1.25 'Space Grotesk', sans-serif;
+  --font-label-medium: 400 0.875rem/1.25 'Space Grotesk', sans-serif;
+  --font-label-small: 400 0.75rem/1.25 'Space Grotesk', sans-serif;
 }
 
 *, *::before, *::after {
