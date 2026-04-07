@@ -39,10 +39,10 @@
   --font-line-height-relaxed: 1.7;
   --color-bg-primary: var(--color-green-950);
   --color-bg-secondary: var(--color-green-900);
-  --color-text-primary: var(--color-green-200);
-  --color-text-secondary: var(--color-green-400);
-  --color-text-muted: var(--color-green-600);
-  --color-accent: var(--color-green-accent);
+  --color-foreground-primary: var(--color-green-200);
+  --color-foreground-secondary: var(--color-green-400);
+  --color-foreground-muted: var(--color-green-600);
+  --color-foreground-accent: var(--color-green-accent);
   --color-border-default: var(--color-green-900);
   --font-title-large: var(--font-weight-regular) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans);
   --font-title-medium: var(--font-weight-regular) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans);
@@ -68,7 +68,7 @@ html {
 
 body {
   background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  color: var(--color-foreground-primary);
   font-family: var(--font-family-serif);
   font-weight: var(--font-weight-regular);
   min-height: 100vh;
@@ -109,7 +109,7 @@ main {
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-lg);
   line-height: var(--font-line-height-snug);
-  color: var(--color-text-primary);
+  color: var(--color-foreground-primary);
   letter-spacing: -0.01em;
 }
 
@@ -127,7 +127,7 @@ main {
   font: var(--font-label-large);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-foreground-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -146,29 +146,29 @@ main {
 }
 
 .work ul li span {
-  color: var(--color-text-muted);
+  color: var(--color-foreground-muted);
 }
 
 /* Contact */
 
 .contact p {
   font: var(--font-body-large);
-  color: var(--color-text-secondary);
+  color: var(--color-foreground-secondary);
   font-style: italic;
 }
 
 /* Links */
 
 a {
-  color: var(--color-text-primary);
+  color: var(--color-foreground-primary);
   text-decoration: underline;
-  text-decoration-color: var(--color-text-primary);
+  text-decoration-color: var(--color-foreground-primary);
   text-underline-offset: 3px;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-foreground-accent);
   text-decoration-color: rgba(74, 222, 110, 0.7);
 }
 

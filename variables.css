@@ -38,10 +38,10 @@
   --font-line-height-relaxed: 1.7; /** Long-form reading */
   --color-bg-primary: var(--color-green-950);
   --color-bg-secondary: var(--color-green-900);
-  --color-text-primary: var(--color-green-200);
-  --color-text-secondary: var(--color-green-400);
-  --color-text-muted: var(--color-green-600);
-  --color-accent: var(--color-green-accent);
+  --color-foreground-primary: var(--color-green-200);
+  --color-foreground-secondary: var(--color-green-400);
+  --color-foreground-muted: var(--color-green-600);
+  --color-foreground-accent: var(--color-green-accent);
   --color-border-default: var(--color-green-900);
   --font-title-large: var(--font-weight-light) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans); /** Hero text, page titles */
   --font-title-medium: var(--font-weight-light) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans); /** Intro paragraphs, blog h1, featured text */
