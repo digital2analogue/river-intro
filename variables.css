@@ -1,0 +1,37 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-green-200: #c8cfc4; /** Light green (primary text) — AA 12.26:1 on 950 */
+  --color-green-400: #a0a89a; /** Soft green (secondary text) — AA 7.97:1 on 950 */
+  --color-green-500: #7a9e80; /** Sage green (intermediate) */
+  --color-green-600: #8b9683; /** Muted sage (labels, tertiary text) — AA 6.32:1 on 950 */
+  --color-green-900: #1e241e; /** Dark green (borders, secondary bg) */
+  --color-green-950: #0a0d0a; /** Near-black green (background) */
+  --color-green-accent: #4ade6e; /** Terminal green (hover/interactive) — AAA 11.13:1 on 950 */
+  --color-neutral-white: #ffffff;
+  --color-neutral-black: #000000;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 80px;
+  --font-family-sans: 'Space Grotesk'; /** Geometric sans — headers, UI */
+  --font-family-serif: Spectral; /** Humanist serif — body text */
+  --font-family-mono: 'JetBrains Mono'; /** Code blocks — reserved */
+  --font-weight-light: 300; /** Display/heading weight */
+  --font-weight-regular: 400; /** Body/UI weight */
+  --font-weight-medium: 500; /** Emphasis — reserved */
+  --color-bg-primary: var(--color-green-950);
+  --color-bg-secondary: var(--color-green-900);
+  --color-text-primary: var(--color-green-200);
+  --color-text-secondary: var(--color-green-400);
+  --color-text-muted: var(--color-green-600);
+  --color-accent: var(--color-green-accent);
+  --color-border-default: var(--color-green-900);
+  --font-heading: var(--font-weight-light) 16px var(--font-family-sans);
+  --font-body: var(--font-weight-regular) 16px var(--font-family-serif);
+  --font-ui: var(--font-weight-regular) 16px var(--font-family-sans);
+}
