@@ -1,21 +1,9 @@
-@import url('variables.css');
+@import './variables.css';
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --bg-primary: var(--color-green-950);
-  --bg-secondary: #121612;
-  --text-primary: var(--color-green-200);
-  --text-secondary: var(--color-green-400);
-  --text-muted: var(--color-green-600);
-  --border-color: var(--color-green-900);
-  --link: var(--color-green-200);
-  --link-hover: var(--color-green-accent);
-  --accent: var(--color-green-accent);
 }
 
 html {
@@ -25,9 +13,9 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-family-serif), Georgia, 'Times New Roman', serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-serif);
   font-weight: var(--font-weight-regular);
   min-height: 100vh;
   display: flex;
@@ -63,10 +51,10 @@ main {
 }
 
 .intro p {
-  font-family: var(--font-family-sans), system-ui, sans-serif;
+  font-family: var(--font-family-sans);
   font-size: clamp(1.2rem, 2.5vw, 1.55rem);
   line-height: 1.65;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   font-weight: var(--font-weight-light);
   letter-spacing: -0.01em;
 }
@@ -82,12 +70,12 @@ main {
 }
 
 .work h2 {
-  font-family: var(--font-family-sans), system-ui, sans-serif;
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-regular);
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -96,42 +84,42 @@ main {
 }
 
 .work ul li {
-  font-family: var(--font-family-serif), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family-serif);
   font-size: 0.95rem;
   line-height: 1.5;
   padding: 0.55rem 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--color-border-default);
 }
 
 .work ul li:last-child {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--color-border-default);
 }
 
 .work ul li span {
-  color: var(--text-muted);
+  color: var(--color-text-muted);
 }
 
 /* Contact */
 
 .contact p {
-  font-family: var(--font-family-serif), Georgia, serif;
+  font-family: var(--font-family-serif);
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-style: italic;
 }
 
 /* Links */
 
 a {
-  color: var(--link);
+  color: var(--color-text-primary);
   text-decoration: underline;
-  text-decoration-color: var(--text-primary);
+  text-decoration-color: var(--color-text-primary);
   text-underline-offset: 3px;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var(--color-accent);
   text-decoration-color: rgba(74, 222, 110, 0.7);
 }
 
