@@ -44,11 +44,10 @@
   --color-accent: var(--color-green-accent);
   --color-border-default: var(--color-green-900);
   --font-title-large: var(--font-weight-light) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans); /** Hero text, page titles */
-  --font-title-medium: var(--font-weight-light) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans); /** Intro paragraphs, featured text */
-  --font-title-small: var(--font-weight-medium) var(--font-size-xl)/var(--font-line-height-snug) var(--font-family-sans); /** Section labels, category headers */
-  --font-heading-1: var(--font-weight-light) var(--font-size-lg)/var(--font-line-height-snug) var(--font-family-sans); /** Primary content heading (h1 in articles) */
-  --font-heading-2: var(--font-weight-regular) var(--font-size-md)/var(--font-line-height-snug) var(--font-family-sans); /** Secondary content heading (h2 in articles) */
-  --font-body: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-normal) var(--font-family-serif); /** Default body text */
-  --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans); /** Navigation, labels, standard UI elements (14px) */
-  --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans); /** Fine print, captions, smallest UI text (12px) */
+  --font-title-medium: var(--font-weight-light) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans); /** Intro paragraphs, blog h1, featured text */
+  --font-title-small: var(--font-weight-medium) var(--font-size-xl)/var(--font-line-height-snug) var(--font-family-sans); /** Section labels, blog h2, category headers */
+  --font-body-medium: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-normal) var(--font-family-serif); /** Default body/paragraph text */
+  --font-body-small: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-normal) var(--font-family-serif); /** Secondary body text, smaller prose */
+  --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans); /** Navigation, button text, standard UI */
+  --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans); /** Meta text, captions, fine print */
 }
