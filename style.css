@@ -51,11 +51,8 @@ main {
 }
 
 .intro p {
-  font-family: var(--font-family-sans);
-  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  line-height: 1.65;
+  font: var(--font-title-medium);
   color: var(--color-text-primary);
-  font-weight: var(--font-weight-light);
   letter-spacing: -0.01em;
 }
 
@@ -70,9 +67,7 @@ main {
 }
 
 .work h2 {
-  font-family: var(--font-family-sans);
-  font-weight: var(--font-weight-regular);
-  font-size: 0.7rem;
+  font: var(--font-title-small);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-text-muted);
@@ -84,9 +79,7 @@ main {
 }
 
 .work ul li {
-  font-family: var(--font-family-serif);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font: var(--font-body);
   padding: 0.55rem 0;
   border-top: 1px solid var(--color-border-default);
 }
@@ -102,8 +95,7 @@ main {
 /* Contact */
 
 .contact p {
-  font-family: var(--font-family-serif);
-  font-size: 1rem;
+  font: var(--font-body);
   color: var(--color-text-secondary);
   font-style: italic;
 }
@@ -136,6 +128,6 @@ a:hover {
   }
 
   .intro p {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xl);
   }
 }

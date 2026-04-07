@@ -24,6 +24,18 @@
   --font-weight-light: 300; /** Display/heading weight */
   --font-weight-regular: 400; /** Body/UI weight */
   --font-weight-medium: 500; /** Emphasis — reserved */
+  --font-size-xs: 0.75rem; /** 12px — fine print, captions */
+  --font-size-sm: 0.875rem; /** 14px — UI labels, nav */
+  --font-size-base: 1.125rem; /** 18px — body text */
+  --font-size-md: 1.25rem; /** 20px — content headings h2 */
+  --font-size-lg: 1.5rem; /** 24px — content headings h1 */
+  --font-size-xl: 1.75rem; /** 28px — title-small / section labels */
+  --font-size-2xl: 2rem; /** 32px — title-medium / intro text */
+  --font-size-3xl: 2.5rem; /** 40px — title-large / hero */
+  --font-line-height-tight: 1.1; /** Titles and display text */
+  --font-line-height-snug: 1.25; /** Headings */
+  --font-line-height-normal: 1.6; /** Body text */
+  --font-line-height-relaxed: 1.7; /** Long-form reading */
   --color-bg-primary: var(--color-green-950);
   --color-bg-secondary: var(--color-green-900);
   --color-text-primary: var(--color-green-200);
@@ -31,7 +43,12 @@
   --color-text-muted: var(--color-green-600);
   --color-accent: var(--color-green-accent);
   --color-border-default: var(--color-green-900);
-  --font-heading: var(--font-weight-light) 16px var(--font-family-sans);
-  --font-body: var(--font-weight-regular) 16px var(--font-family-serif);
-  --font-ui: var(--font-weight-regular) 16px var(--font-family-sans);
+  --font-title-large: var(--font-weight-light) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans); /** Hero text, page titles */
+  --font-title-medium: var(--font-weight-light) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans); /** Intro paragraphs, featured text */
+  --font-title-small: var(--font-weight-medium) var(--font-size-xl)/var(--font-line-height-snug) var(--font-family-sans); /** Section labels, category headers */
+  --font-heading-1: var(--font-weight-light) var(--font-size-lg)/var(--font-line-height-snug) var(--font-family-sans); /** Primary content heading (h1 in articles) */
+  --font-heading-2: var(--font-weight-regular) var(--font-size-md)/var(--font-line-height-snug) var(--font-family-sans); /** Secondary content heading (h2 in articles) */
+  --font-body: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-normal) var(--font-family-serif); /** Default body text */
+  --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans); /** Navigation, labels, standard UI elements (14px) */
+  --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans); /** Fine print, captions, smallest UI text (12px) */
 }
