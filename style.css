@@ -71,8 +71,7 @@ html {
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-foreground-primary);
-  font-family: var(--font-family-serif);
-  font-weight: var(--font-weight-regular);
+  font: var(--font-body-large);
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
@@ -107,10 +106,7 @@ main {
 }
 
 .intro p {
-  font-family: var(--font-family-sans);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-2xl);
-  line-height: var(--font-line-height-snug);
+  font: var(--font-title-medium);
   color: var(--color-foreground-primary);
   letter-spacing: -0.01em;
 }
