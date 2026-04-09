@@ -15,8 +15,8 @@
   --color-neutral-black: #000000;
 
   /* Semantic: Colors */
-  --color-bg-primary: #0A0D0A;
-  --color-bg-secondary: #1E241E;
+  --color-background-default: #0A0D0A;
+  --color-background-alt: #1E241E;
   --color-foreground-primary: #C8CFC4;
   --color-foreground-secondary: #A0A89A;
   --color-foreground-muted: #8B9683;
