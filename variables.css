@@ -36,7 +36,7 @@
   --font-line-height-normal: 1.5;
   --font-line-height-relaxed: 1.75;
   --font-family-sans: 'Space Grotesk', sans-serif;
-  --font-family-serif: 'Source Serif 4', Georgia, serif;
+  --font-family-serif: Spectral, Georgia, serif;
   --font-family-mono: 'JetBrains Mono', monospace;
   --font-weight-light: 300;
   --font-weight-regular: 400;
@@ -48,9 +48,9 @@
   --font-title-large: 400 2.5rem/1.1 'Space Grotesk', sans-serif;
   --font-title-medium: 400 1.5rem/1.25 'Space Grotesk', sans-serif;
   --font-title-small: 400 1.125rem/1.25 'Space Grotesk', sans-serif;
-  --font-body-large: 400 1rem/1.5 'Source Serif 4', Georgia, serif;
-  --font-body-medium: 400 0.875rem/1.5 'Source Serif 4', Georgia, serif;
-  --font-body-small: 400 0.75rem/1.5 'Source Serif 4', Georgia, serif;
+  --font-body-large: 400 1rem/1.5 Spectral, Georgia, serif;
+  --font-body-medium: 400 0.875rem/1.5 Spectral, Georgia, serif;
+  --font-body-small: 400 0.75rem/1.5 Spectral, Georgia, serif;
   --font-label-large: 400 1rem/1.25 'Space Grotesk', sans-serif;
   --font-label-medium: 400 0.875rem/1.25 'Space Grotesk', sans-serif;
   --font-label-small: 400 0.75rem/1.25 'Space Grotesk', sans-serif;
