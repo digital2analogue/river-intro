@@ -74,6 +74,8 @@ html {
 
 body {
   background-color: var(--color-background-default);
+  background-image: url('bg.gif');
+  background-repeat: repeat;
   color: var(--color-foreground-primary);
   font: var(--font-body-large);
   min-height: 100vh;
