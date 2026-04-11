@@ -109,13 +109,13 @@ main {
   margin-bottom: 4rem;
 }
 
-.intro p {
+.intro h1 {
   font: var(--font-title-medium);
   color: var(--color-foreground-primary);
   letter-spacing: -0.01em;
 }
 
-.intro p + p {
+.intro h1 + h1 {
   margin-top: 1.25em;
 }
 
