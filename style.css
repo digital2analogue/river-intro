@@ -59,6 +59,17 @@
   --font-label-large: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-snug) var(--font-family-sans);
   --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans);
   --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans);
+
+  /* Letter-spacing tokens */
+  --letter-spacing-tightest: -0.01em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.03em;
+  --letter-spacing-wider: 0.1em;
+
+  /* Motion tokens */
+  --duration-fast: 0.15s;
+  --easing-default: ease;
 }
 
 *, *::before, *::after {
@@ -114,7 +125,7 @@ main {
 .intro h1 {
   font: var(--font-title-medium);
   color: var(--color-foreground-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--letter-spacing-tightest);
 }
 
 .intro h1 + h1 {
@@ -129,7 +140,7 @@ main {
 
 .work h2 {
   font: var(--font-label-large);
-  letter-spacing: 0.15em;
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
   color: var(--color-foreground-muted);
   margin-bottom: 1.5rem;
@@ -168,7 +179,7 @@ a {
   text-decoration: underline;
   text-decoration-color: var(--color-foreground-primary);
   text-underline-offset: 3px;
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  transition: color var(--duration-fast) var(--easing-default), text-decoration-color var(--duration-fast) var(--easing-default);
 }
 
 a:hover {
