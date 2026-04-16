@@ -68,7 +68,7 @@
   --letter-spacing-wider: 0.1em;
 
   /* Motion tokens */
-  --duration-fast: 0.15s;
+  --duration-fast: 120ms;
   --easing-default: ease;
 }
 
