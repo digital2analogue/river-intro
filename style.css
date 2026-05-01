@@ -1,78 +1,144 @@
 /**
- * Brand tokens — inlined from variables.css (do not use @import; it fails on Netlify plain HTML deploys)
- * Source of truth: variables.css
+ * Brand tokens — inlined from brand-tokens/build/css/variables.css
+ * (do not use @import; it fails on Netlify plain HTML deploys).
+ * Source of truth: ../brand-tokens — do not edit values here directly.
+ * Mirrors the inlined block in portfolio-vercel/app/globals.css.
  */
 
 :root {
-  /* Primitive: Colors */
-  --color-green-950: #0A0D0A;
-  --color-green-900: #1E241E;
-  --color-green-600: #8B9683;
-  --color-green-500: #7A9E80;
-  --color-green-400: #A0A89A;
-  --color-green-200: #C8CFC4;
-  --color-green-accent: #4ADE6E;
-  --color-neutral-white: #FFFFFF;
-  --color-neutral-black: #000000;
+  /* Primitives — colors */
+  --primitive-color-green-200: #c8cfc4;
+  --primitive-color-green-400: #a0a89a;
+  --primitive-color-green-600: #8b9683;
+  --primitive-color-green-800: #2e3a2e;
+  --primitive-color-green-900: #1e241e;
+  --primitive-color-green-950: #0a0d0a;
+  --primitive-color-green-accent: #4ade6e;
+  --primitive-color-green-accent-hover: #3eba5c;
+  --primitive-color-green-accent-active: #349b4d;
+  --primitive-color-green-chip: #0f2016;
+  --primitive-color-neutral-white: #ffffff;
+  --primitive-color-neutral-black: #000000;
 
-  /* Semantic: Colors */
-  --color-background-default: var(--color-green-950);
-  --color-background-alt: var(--color-green-900);
-  --color-background-action: var(--color-green-accent);
-  --color-foreground-primary: var(--color-green-200);
-  --color-foreground-secondary: var(--color-green-400);
-  --color-foreground-muted: var(--color-green-600);
-  --color-foreground-accent: var(--color-green-accent);
-  --color-foreground-action: var(--color-green-accent);
-  --color-foreground-on-action: var(--color-green-950);
-  --color-border-default: var(--color-green-900);
+  /* Primitives — letter-spacing */
+  --primitive-letter-spacing-tight: -0.01em;
+  --primitive-letter-spacing-tightest: -0.025em;
+  --primitive-letter-spacing-normal: 0em;
+  --primitive-letter-spacing-wide: 0.03em;
+  --primitive-letter-spacing-wider: 0.1em;
 
-  /* Primitive: Typography */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-md: 1.25rem;
-  --font-size-lg: 1.5rem;
-  --font-size-xl: 1.75rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
-  --font-line-height-tight: 1.1;
-  --font-line-height-snug: 1.25;
-  --font-line-height-normal: 1.6;
-  --font-line-height-relaxed: 1.7;
-  --font-family-sans: 'Space Grotesk', sans-serif;
-  --font-family-serif: Spectral, Georgia, serif;
-  --font-family-mono: 'JetBrains Mono', monospace;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  /* Primitives — motion */
+  --primitive-duration-fast: 120ms;
+  --primitive-duration-normal: 200ms;
+  --primitive-duration-slow: 350ms;
+  --primitive-easing-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --primitive-easing-in: cubic-bezier(0.42, 0, 1, 1);
+  --primitive-easing-out: cubic-bezier(0, 0, 0.58, 1);
+  --primitive-easing-in-out: cubic-bezier(0.42, 0, 0.58, 1);
 
-  /* Semantic: Typography (composite shorthand) */
-  --font-title-large: var(--font-weight-regular) var(--font-size-3xl)/var(--font-line-height-tight) var(--font-family-sans);
-  --font-title-medium: var(--font-weight-regular) var(--font-size-2xl)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-title-small: var(--font-weight-regular) var(--font-size-lg)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-body-large: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-normal) var(--font-family-serif);
-  --font-body-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-normal) var(--font-family-serif);
-  --font-body-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-normal) var(--font-family-serif);
-  --font-label-large: var(--font-weight-regular) var(--font-size-base)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-label-medium: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-snug) var(--font-family-sans);
-  --font-label-small: var(--font-weight-regular) var(--font-size-xs)/var(--font-line-height-snug) var(--font-family-sans);
+  /* Primitives — radius */
+  --primitive-radius-sm: 4px;
+  --primitive-radius-md: 8px;
 
-  /* Letter-spacing tokens */
-  --letter-spacing-tightest: -0.01em;
-  --letter-spacing-tight: -0.025em;
-  --letter-spacing-normal: 0em;
-  --letter-spacing-wide: 0.03em;
-  --letter-spacing-wider: 0.1em;
+  /* Primitives — spacing (fluid for portfolio context) */
+  --primitive-space-3xs: 2px;
+  --primitive-space-2xs: 4px;
+  --primitive-space-xs: 8px;
+  --primitive-space-sm: 12px;
+  --primitive-space-md: 16px;
+  --primitive-space-lg:  clamp(16px, 3.75vw, 24px);
+  --primitive-space-xl:  clamp(20px, 5vw,    32px);
+  --primitive-space-2xl: clamp(32px, 7.5vw,  48px);
+  --primitive-space-3xl: clamp(40px, 10vw,   64px);
+  --primitive-space-4xl: clamp(48px, 12.5vw, 80px);
+  --primitive-space-5xl: clamp(80px, 20vw,   128px);
 
-  /* Motion tokens */
-  --duration-fast: 120ms;
-  --easing-default: ease;
+  /* Primitives — typography (fluid for portfolio context) */
+  --primitive-font-family-sans: 'Space Grotesk', system-ui, sans-serif;
+  --primitive-font-family-serif: Spectral, Georgia, serif;
+  --primitive-font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --primitive-font-weight-light: 300;
+  --primitive-font-weight-regular: 400;
+  --primitive-font-weight-medium: 500;
+  --primitive-font-weight-semibold: 600;
+  --primitive-font-weight-bold: 700;
+  --primitive-font-size-xs:   0.75rem;
+  --primitive-font-size-sm:   0.875rem;
+  --primitive-font-size-base: 1rem;
+  --primitive-font-size-md:   clamp(1rem,    3.2vw,  1.25rem);
+  --primitive-font-size-lg:   clamp(1.25rem, 3.8vw,  1.5rem);
+  --primitive-font-size-2xl:  clamp(1.5rem,  5vw,    2rem);
+  --primitive-font-size-3xl:  clamp(1.75rem, 6.25vw, 2.5rem);
+  --primitive-font-line-height-tight: 1.1;
+  --primitive-font-line-height-snug: 1.25;
+  --primitive-font-line-height-normal: 1.6;
+  --primitive-font-line-height-relaxed: 1.7;
+
+  /* Semantic — colors */
+  --color-background-default: var(--primitive-color-green-950);
+  --color-background-alt: var(--primitive-color-green-900);
+  --color-background-action: var(--primitive-color-green-accent);
+  --color-background-accent: var(--primitive-color-green-accent);
+  --color-foreground-default: var(--primitive-color-green-200);
+  --color-foreground-alt: var(--primitive-color-green-400);
+  --color-foreground-muted: var(--primitive-color-green-600);
+  --color-foreground-action: var(--primitive-color-green-accent);
+  --color-foreground-accent: var(--primitive-color-green-accent);
+  --color-foreground-on-action: var(--primitive-color-green-950);
+  --color-foreground-on-accent: var(--primitive-color-green-950);
+  --color-border-default: var(--primitive-color-green-900);
+  --color-border-elevated: var(--primitive-color-green-800);
+  --color-border-muted: var(--primitive-color-green-chip);
+
+  /* Semantic — letter-spacing */
+  --letter-spacing-display: var(--primitive-letter-spacing-tight);
+  --letter-spacing-title: var(--primitive-letter-spacing-tightest);
+  --letter-spacing-body: var(--primitive-letter-spacing-normal);
+  --letter-spacing-label: var(--primitive-letter-spacing-wide);
+  --letter-spacing-all-caps: var(--primitive-letter-spacing-wider);
+
+  /* Semantic — motion */
+  --motion-duration-instant: var(--primitive-duration-fast);
+  --motion-duration-standard: var(--primitive-duration-normal);
+  --motion-duration-emphasized: var(--primitive-duration-slow);
+  --motion-easing-enter: var(--primitive-easing-out);
+  --motion-easing-exit: var(--primitive-easing-in);
+  --motion-easing-move: var(--primitive-easing-in-out);
+  --motion-easing-default: var(--primitive-easing-default);
+
+  /* Semantic — radius */
+  --radius-sm: var(--primitive-radius-sm);
+  --radius-default: var(--primitive-radius-md);
+
+  /* Semantic — spacing */
+  --spacing-micro: var(--primitive-space-2xs);
+  --spacing-tight: var(--primitive-space-xs);
+  --spacing-inline: var(--primitive-space-sm);
+  --spacing-element: var(--primitive-space-md);
+  --spacing-component: var(--primitive-space-lg);
+  --spacing-group: var(--primitive-space-xl);
+  --spacing-layout: var(--primitive-space-2xl);
+  --spacing-block: var(--primitive-space-3xl);
+  --spacing-page: var(--primitive-space-4xl);
+  --spacing-section: var(--primitive-space-5xl);
+
+  /* Semantic — typography shorthand */
+  --font-display:      var(--primitive-font-weight-light)   var(--primitive-font-size-3xl)/var(--primitive-font-line-height-tight)   var(--primitive-font-family-sans);
+  --font-title-large:  var(--primitive-font-weight-light)   var(--primitive-font-size-2xl)/var(--primitive-font-line-height-snug)    var(--primitive-font-family-sans);
+  --font-title-medium: var(--primitive-font-weight-light)   var(--primitive-font-size-lg)/var(--primitive-font-line-height-snug)     var(--primitive-font-family-sans);
+  --font-title-small:  var(--primitive-font-weight-light)   var(--primitive-font-size-md)/var(--primitive-font-line-height-snug)     var(--primitive-font-family-sans);
+  --font-body-large:   var(--primitive-font-weight-regular) var(--primitive-font-size-base)/var(--primitive-font-line-height-normal) var(--primitive-font-family-serif);
+  --font-body-medium:  var(--primitive-font-weight-regular) var(--primitive-font-size-sm)/var(--primitive-font-line-height-normal)   var(--primitive-font-family-serif);
+  --font-body-small:   var(--primitive-font-weight-regular) var(--primitive-font-size-xs)/var(--primitive-font-line-height-normal)   var(--primitive-font-family-serif);
+  --font-label-large:  var(--primitive-font-weight-regular) var(--primitive-font-size-base)/var(--primitive-font-line-height-snug)   var(--primitive-font-family-sans);
+  --font-label-medium: var(--primitive-font-weight-regular) var(--primitive-font-size-sm)/var(--primitive-font-line-height-snug)     var(--primitive-font-family-sans);
+  --font-label-small:  var(--primitive-font-weight-regular) var(--primitive-font-size-xs)/var(--primitive-font-line-height-snug)     var(--primitive-font-family-sans);
+  --font-code:         var(--primitive-font-weight-regular) var(--primitive-font-size-sm)/var(--primitive-font-line-height-normal)   var(--primitive-font-family-mono);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -87,12 +153,12 @@ body {
   background-color: var(--color-background-default);
   background-image: url('bg.gif');
   background-repeat: repeat;
-  color: var(--color-foreground-primary);
+  color: var(--color-foreground-default);
   font: var(--font-body-large);
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
-  padding: 0 1.5rem;
+  padding: 0 var(--spacing-component);
 }
 
 main {
@@ -105,7 +171,7 @@ main {
 /* Avatar */
 
 .avatar {
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--spacing-layout);
 }
 
 .avatar img {
@@ -119,13 +185,13 @@ main {
 /* Intro */
 
 .intro {
-  margin-bottom: 4rem;
+  margin-bottom: var(--spacing-block);
 }
 
 .intro h1 {
-  font: var(--font-title-medium);
-  color: var(--color-foreground-primary);
-  letter-spacing: var(--letter-spacing-tightest);
+  font: var(--font-title-large);
+  letter-spacing: var(--letter-spacing-title);
+  color: var(--color-foreground-default);
 }
 
 .intro h1 + h1 {
@@ -135,15 +201,15 @@ main {
 /* Work section */
 
 .work {
-  margin-bottom: 4rem;
+  margin-bottom: var(--spacing-block);
 }
 
 .work h2 {
   font: var(--font-label-large);
-  letter-spacing: var(--letter-spacing-wider);
+  letter-spacing: var(--letter-spacing-all-caps);
   text-transform: uppercase;
   color: var(--color-foreground-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-component);
 }
 
 .work ul {
@@ -152,7 +218,7 @@ main {
 
 .work ul li {
   font: var(--font-body-large);
-  padding: 0.55rem 0;
+  padding: var(--spacing-tight) 0;
   border-top: 1px solid var(--color-border-default);
 }
 
@@ -168,31 +234,32 @@ main {
 
 .contact p {
   font: var(--font-body-large);
-  color: var(--color-foreground-secondary);
+  color: var(--color-foreground-alt);
   font-style: italic;
 }
 
-/* Links */
+/* Global link rule — phosphor green, underlined at rest, lose underline on hover.
+   Mirrors the pattern in portfolio-vercel and matches the design-system rule. */
 
 a {
-  color: var(--color-foreground-primary);
+  color: var(--color-foreground-action);
   text-decoration: underline;
-  text-decoration-color: var(--color-foreground-primary);
   text-underline-offset: 3px;
-  transition: color var(--duration-fast) var(--easing-default), text-decoration-color var(--duration-fast) var(--easing-default);
+  text-decoration-thickness: 1px;
+  text-decoration-color: currentColor;
+  transition: text-decoration-color var(--motion-duration-instant) var(--motion-easing-default),
+              color var(--motion-duration-instant) var(--motion-easing-default);
 }
 
 a:hover {
-  color: var(--color-foreground-accent);
-  text-decoration-color: color-mix(in srgb, var(--color-foreground-accent) 70%, transparent);
+  text-decoration: none;
 }
-
 
 /* Mobile */
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   body {
-    padding: 0 1.25rem;
+    padding: 0 var(--spacing-inline);
   }
 
   main {
