@@ -1,0 +1,11 @@
+{
+  "name": "river-intro",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "pull-tokens": "node scripts/pull-tokens.mjs"
+  },
+  "devDependencies": {
+    "@digital2analogue2/parsimony": "^0.1.1"
+  }
+}
