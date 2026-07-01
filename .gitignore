@@ -7,3 +7,7 @@ build/
 *.log
 .vite/
 test-results/
+
+# playwright artifacts
+/test-results/
+/playwright-report/
