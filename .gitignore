@@ -1,1 +1,13 @@
 node_modules/
+.env
+.env.local
+dist/
+build/
+.DS_Store
+*.log
+.vite/
+test-results/
+
+# playwright artifacts
+/test-results/
+/playwright-report/
