@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx http-server . -p 8000 -o index.html",
+    "pull-tokens": "node scripts/pull-tokens.mjs",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:visual": "playwright test",
@@ -12,6 +13,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@digital2analogue2/parsimony": "^0.1.1",
     "@playwright/test": "^1.40.0",
     "@vitest/ui": "^3.0.0",
     "http-server": "^14.1.0",

@@ -1,0 +1,30 @@
+/**
+ * tokens.overrides.css — river-intro local token overrides.
+ *
+ * variables.css holds the base dark-theme tokens, generated verbatim from
+ * @digital2analogue2/parsimony (run `npm run pull-tokens` to refresh).
+ * This file layers river-intro's only token deltas on top: the portfolio-
+ * context fluid responsive scaling. Linked AFTER variables.css in index.html
+ * so these win. Mirrors the override :root in portfolio-vercel/app/globals.css.
+ */
+
+:root {
+  /* Font families — restore the fallback stacks (base ships bare family names) */
+  --primitive-font-family-sans: 'Space Grotesk', system-ui, sans-serif;
+  --primitive-font-family-serif: Spectral, Georgia, serif;
+  --primitive-font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Spacing — fluid for portfolio/editorial context (desktop ceilings match base) */
+  --primitive-space-lg:  clamp(16px, 3.75vw, 24px);
+  --primitive-space-xl:  clamp(20px, 5vw,    32px);
+  --primitive-space-2xl: clamp(32px, 7.5vw,  48px);
+  --primitive-space-3xl: clamp(40px, 10vw,   64px);
+  --primitive-space-4xl: clamp(48px, 12.5vw, 80px);
+  --primitive-space-5xl: clamp(80px, 20vw,   128px);
+
+  /* Typography — fluid for portfolio/editorial context */
+  --primitive-font-size-md:   clamp(1rem,    3.2vw,  1.25rem);
+  --primitive-font-size-lg:   clamp(1.25rem, 3.8vw,  1.5rem);
+  --primitive-font-size-2xl:  clamp(1.5rem,  5vw,    2rem);
+  --primitive-font-size-3xl:  clamp(1.75rem, 6.25vw, 2.5rem);
+}
