@@ -1,0 +1,24 @@
+{
+  "name": "river-intro",
+  "version": "1.0.0",
+  "description": "River Romney intro page",
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server . -p 8000 -o index.html",
+    "pull-tokens": "node scripts/pull-tokens.mjs",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@digital2analogue2/parsimony": "^0.1.1",
+    "@playwright/test": "^1.40.0",
+    "@vitest/ui": "^3.0.0",
+    "http-server": "^14.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "vitest": "^3.0.0"
+  }
+}
