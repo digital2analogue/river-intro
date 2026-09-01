@@ -11,6 +11,20 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
+        # Majors stay OUT of the group. Repo policy is that major bumps are
+        # taken by hand, and with `patterns: ["*"]` alone that policy froze
+        # everything behind the first unapproved one: PR #26 carried the
+        # parsimony 0.7.0 token bump (including a WCAG fix) but also vitest
+        # 3->4, so it sat from 2026-08-17 until #30 unpicked it by hand, and
+        # this site shipped 0.6.1 tokens the whole time (#27).
+        #
+        # With this, minors and patches still arrive as one quiet weekly PR
+        # that auto-merges, and each major arrives on its own — declinable
+        # without taking the safe half hostage. Same shape decisioning-table
+        # adopted after its typescript-7 incident.
+        update-types:
+          - minor
+          - patch
 
   # Keep the actions used in .github/workflows fresh too.
   - package-ecosystem: github-actions
