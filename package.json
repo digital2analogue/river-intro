@@ -15,11 +15,11 @@
   },
   "devDependencies": {
     "@digital2analogue2/parsimony": "^0.7.1",
-    "@playwright/test": "^1.40.0",
-    "@vitest/ui": "^3.0.0",
+    "@playwright/test": "^1.62.1",
+    "@vitest/ui": "^4.1.11",
     "http-server": "^14.1.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.8",
-    "vitest": "^3.0.0"
+    "lint-staged": "^17.4.1",
+    "vitest": "^4.1.11"
   }
 }
