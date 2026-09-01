@@ -1,0 +1,87 @@
+name: Tokens Freshness
+
+# Closes the "published -> consumer install" staleness arrow. river-intro inlines
+# its tokens into a committed variables.css, so it can fall behind in two ways:
+# the dependency lags the published package, or variables.css lags the dependency
+# because someone bumped without re-running `pull-tokens`. `sync-tokens` checks
+# both, and this reflects the result as a single tracked issue — opened/updated
+# when stale, closed automatically once it is back in sync.
+#
+# Mirrors portfolio-vercel/.github/workflows/tokens-freshness.yml. Added after
+# this repo sat two releases behind (0.6.1 while 0.7.1 was published) with
+# nothing to notice — parsimony#27.
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Mondays 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  tokens-freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+
+      - name: Check installed tokens against the latest published
+        id: check
+        shell: bash
+        run: |
+          if npm run --silent sync-tokens > /tmp/report.txt 2>&1; then
+            echo "result=fresh" >> "$GITHUB_OUTPUT"
+          else
+            echo "result=stale" >> "$GITHUB_OUTPUT"
+          fi
+          cat /tmp/report.txt >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Reflect result as a tracked issue
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/report.txt', 'utf8').trim();
+            const stale = '${{ steps.check.outputs.result }}' === 'stale';
+            const title = 'Installed @digital2analogue2/parsimony is behind the published version';
+            const label = 'tokens-freshness';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: label, per_page: 100,
+            });
+            const existing = open.data.find((i) => i.title === title);
+
+            const body = [
+              '```',
+              report,
+              '```',
+              '',
+              '---',
+              `Checked at ${stamp} UTC by the [tokens-freshness workflow](${runUrl}).`,
+              'To resolve: `npm install @digital2analogue2/parsimony@latest && npm run pull-tokens`, then commit the regenerated `variables.css`.',
+            ].join('\n');
+
+            if (stale) {
+              if (existing) {
+                await github.rest.issues.update({ ...context.repo, issue_number: existing.number, body });
+                await github.rest.issues.createComment({ ...context.repo, issue_number: existing.number,
+                  body: `Still behind on the ${stamp} UTC check.` });
+              } else {
+                try { await github.rest.issues.getLabel({ ...context.repo, name: label }); }
+                catch { await github.rest.issues.createLabel({ ...context.repo, name: label,
+                  color: 'FCD34D', description: 'Installed token package is behind the published version' }); }
+                await github.rest.issues.create({ ...context.repo, title, body, labels: [label] });
+              }
+            } else if (existing) {
+              await github.rest.issues.createComment({ ...context.repo, issue_number: existing.number,
+                body: `Back in sync with the published package (${stamp} UTC). Closing.` });
+              await github.rest.issues.update({ ...context.repo, issue_number: existing.number, state: 'closed' });
+            }
