@@ -8,14 +8,15 @@
   --primitive-color-green-200: #c8cfc4; /** Light sage-white. The brightest text tone in the dark-theme palette — high contrast without the harshness of pure white. Contrast vs green.950: 12.26:1 (AAA). Referenced by: color.foreground.default. */
   --primitive-color-green-400: #a0a89a; /** Soft desaturated green. Readable and unobtrusive secondary text. Contrast vs green.950: 7.97:1 (AA). Referenced by: color.foreground.alt, color.border.active. */
   --primitive-color-green-600: #8b9683; /** Muted sage. The lowest-contrast text color in the system that still meets WCAG AA — used for placeholders, captions, and subtle borders. Contrast vs green.950: 6.32:1 (AA). Referenced by: color.foreground.muted, color.border.hover. */
-  --primitive-color-green-800: #2e3a2e; /** Elevated green surface. One step above border-default — used for structural chrome borders, card frames, and prominent dividers. Referenced by: color.border.elevated. */
+  --primitive-color-green-700: #5c685a; /** Legible passive edge. Desaturated green-gray sitting between green.600 (6.32:1) and green.800 (1.64:1) — the lightest step that clears the SC 1.4.11 non-text floor on the canvas (3.33:1 vs green.950). Reads as neutral chrome, not accent. Referenced by: color.border.default. */
+  --primitive-color-green-800: #2e3a2e; /** Elevated green surface. One step above border-alt — used for structural chrome borders, card frames, and prominent dividers. Referenced by: color.border.elevated. */
   --primitive-color-green-900: #1e241e; /** Deep forest green. Elevated surface and default border — creates subtle depth above the canvas without breaking the dark aesthetic. Referenced by: color.background.alt, color.background.disabled, color.border.default. */
   --primitive-color-green-950: #0a0d0a; /** Near-black with a warm green undertone. The canvas — every page background and full-bleed section. Warmer than pure black, which reads as sterile. Referenced by: color.background.default, color.foreground.on-action, color.foreground.on-accent. */
   --primitive-color-green-accent: #4ade6e; /** Terminal phosphor green. The only high-chroma value in the system — vivid and saturated against the muted ramp. High visual weight; always use through semantic tokens. Contrast vs green.950: 11.13:1 (AAA). Referenced by: color.background.action, color.background.accent, color.foreground.action, color.foreground.accent-green, color.foreground.success. */
   --primitive-color-green-accent-hover: #3eba5c; /** Hover state of the phosphor accent. 16% black mixed into green.accent. Referenced by: color.background.action-hover. */
   --primitive-color-green-accent-active: #349b4d; /** Active/pressed state of the phosphor accent. 30% black mixed into green.accent. Referenced by: color.background.action-active. */
   --primitive-color-green-chip: #0f2016; /** Dark green chip fill. Named slot — sits between green.900 and green.950 in luminance but cannot be numbered without creating a non-standard step. Used for subtle dark-theme chip/tag fills, callout panel backgrounds, and hairline borders. Referenced by: color.background.accent-green, color.background.success-alt, color.border.muted. */
-  --primitive-color-green-positive: #15803d; /** DE light-mode success green. Passes AA on white as text (5.0:1) and supports white text as fill (5.0:1). DE only — not used in the base dark theme. Referenced by: color.background.success, color.foreground.success (DE overrides). */
+  --primitive-color-green-positive: #166534; /** DE light-mode success green. Passes AA as text on every DE surface — white 7.13:1, canvas 6.69:1, background.alt 6.23:1 — and supports white text as fill (7.13:1). Darkened one ramp step from #15803D on 2026-08-12: the old value cleared white and canvas but measured 4.38:1 on background.alt, so success text failed AA on exactly the surface a success message most often appears on (toast, menu, card). DE only — not used in the base dark theme. Referenced by: color.background.success, color.foreground.success, color.foreground.accent-green (DE overrides). */
   --primitive-color-green-approve: #00875a; /** DE Approve outcome green. Teal-shifted green used for Approve badges, income indicators, and boolean type chips in the decision-engine. Distinct from green.positive by its cooler blue-shifted tone. Contrast vs white: 4.55:1 (WCAG AA). DE only — not used in the base dark theme. Referenced by: color.feedback.success (DE override). Renamed from green.teal 2026-04-28. */
   --primitive-color-neutral-white: #ffffff; /** Pure white. Reserved for maximum-contrast situations such as text overlaid on photography or outside-system contexts. Avoid in standard UI — it reads as outside the palette and breaks tonal cohesion. */
   --primitive-color-neutral-black: #000000; /** Pure black. Used as the background.default override for the .art site (photo-optimized, no green undertone needed). Not the default canvas for other properties — that is green.950. */
@@ -44,11 +45,22 @@
   --primitive-color-gray-200: #d8dce0; /** Standard border. Used as border.default in decision-engine — input outlines, card edges, table borders. */
   --primitive-color-gray-300: #c0c4ce; /** Elevated gray border step for DE light mode. Between border-default (gray.200) and border-hover (blue.700). Used for structural chrome borders — headers, card frames, prominent dividers. */
   --primitive-color-gray-500: #5e6e88; /** Muted text on white. Used as foreground.muted in decision-engine. Contrast vs white: 5.17:1 (WCAG AA). Previous value #767686 calculated to 4.46:1 — barely fails AA despite the documented 4.57:1 figure. Corrected 2026-04-27. */
-  --primitive-color-gray-600: #4e5f79; /** Tertiary text on white — sits between foreground.muted (gray.500, 5.17:1) and foreground.alt (gray.700, 8.9:1). Cool blue-gray consistent with the DE palette character. Contrast vs white: ~6.2:1 (WCAG AA). Use for helper/descriptor text that should read as supplemental without the passive 'disabled' feel of muted. */
-  --primitive-color-gray-700: #4a4a5a; /** Secondary text on white. Used as foreground.alt in decision-engine. Contrast vs white: 8.9:1 (WCAG AAA). */
+  --primitive-color-gray-600: #4e5f79; /** Tertiary text on white — sits between foreground.muted (gray.500, 5.17:1) and foreground.alt (gray.navy, 9.39:1). Cool blue-gray consistent with the DE palette character. Contrast vs white: ~6.2:1 (WCAG AA). Use for helper/descriptor text that should read as supplemental without the passive 'disabled' feel of muted. */
+  --primitive-color-gray-700: #4a4a5a; /** Secondary text on white. Contrast vs white: 8.9:1 (WCAG AAA). UNREFERENCED since 2026-08-18: decision-engine's foreground.alt was re-pointed to gray.navy when the duplicate foreground.secondary was folded into it. Kept as a palette step, not currently bound to any semantic role. */
   --primitive-color-gray-900: #1a1a2e; /** Near-black with a cool cast. Used as foreground.default in decision-engine — primary headings, body copy, labels. Contrast vs white: 16.1:1 (WCAG AAA). */
   --primitive-color-gray-950: #0f1a2e; /** Deepest navy. Used as foreground.primary in decision-engine — the darkest text value, for the most prominent labels and headings where maximum contrast is needed. Contrast vs white: 17.39:1 (WCAG AAA). */
-  --primitive-color-gray-navy: #3a4663; /** Secondary text — navy-tinted mid-tone. Used as foreground.secondary in decision-engine. Named slot rather than a numeric step — this navy blue-gray is perceptually darker than gray.700 (#4A4A5A) due to its chromatic shift, making numeric sequencing impossible without inversion. Contrast vs white: 9.39:1 (WCAG AAA). */
+  --primitive-color-gray-navy: #3a4663; /** Secondary text — navy-tinted mid-tone. Used as foreground.alt in decision-engine (and by its deprecated foreground.secondary alias). Named slot rather than a numeric step — this navy blue-gray is perceptually darker than gray.700 (#4A4A5A) due to its chromatic shift, making numeric sequencing impossible without inversion. Contrast vs white: 9.39:1 (WCAG AAA). */
+  --primitive-color-arctic-50: #f5f8fc; /** Arctic page canvas. Used as background.default in decision-engine — replaces pure white for a cooler, calmer data-UI surface. Contrast vs gray.900 text: 15.2:1 (WCAG AAA). */
+  --primitive-color-arctic-100: #f0f4fa; /** Arctic elevated surface. Used as background.elevated in decision-engine — cards, modals, popovers floating above the canvas. */
+  --primitive-color-arctic-150: #ebf0f8; /** Arctic secondary surface. Used as background.alt in decision-engine — table row alternates, panel backgrounds, input fills. */
+  --primitive-color-arctic-200: #e2eaf5; /** Arctic hover surface. Used as background.hover in decision-engine — ghost-button and passive-surface hover fills. */
+  --primitive-color-arctic-300: #d8e4f0; /** Arctic hairline border. Used as border.muted in decision-engine — table row separators, subtle dividers. */
+  --primitive-color-arctic-400: #c8d6ea; /** Arctic standard border. Used as border.default in decision-engine — input outlines, card edges, table borders. */
+  --primitive-color-arctic-500: #b0c4d8; /** Arctic elevated border. Used as border.elevated in decision-engine — structural chrome: headers, card frames, prominent dividers. */
+  --primitive-color-arctic-600: #7a8fa9; /** Arctic legible edge. The lightest arctic step clearing the SC 1.4.11 non-text floor on the arctic canvas (3.11:1 vs arctic.50). Used as border.default in decision-engine — functional borders on inputs and interactive controls. */
+  --primitive-color-slate-200: #e2e7f0; /** Light slate chip surface. Used as background.inverted in decision-engine — AND/OR logic chips; distinct from white form inputs without being heavy. Pair with foreground.on-inverted (slate.700, ~7:1). */
+  --primitive-color-slate-400: #a8b0be; /** Washed-out slate for WCAG-exempt inactive UI elements (unselected segmented-control labels and similar non-text-critical chrome). Used as foreground.inactive in decision-engine. Deliberately sub-AA — do not use for content text. */
+  --primitive-color-slate-700: #2c3a55; /** Dark navy-slate text on light chip surfaces. Used as foreground.on-inverted in decision-engine — AND/OR chip labels on slate.200 (~7:1 AAA). */
   --primitive-color-indigo-100: #e0e7ff; /** Light indigo tint for chip/tag fills. Use via color.background.accent-indigo. */
   --primitive-color-indigo-700: #4338ca; /** Saturated indigo for bold accent fills. Contrast vs white: 7.98:1 (AAA). Use via color.background.accent-indigo-bold. */
   --primitive-color-sky-100: #e0f2fe; /** Light sky tint for chip/tag fills. Use via color.background.accent-sky. */
@@ -63,6 +75,7 @@
   --primitive-color-amber-500: #d97706; /** Medium amber. Warning fill in light-mode (DE). Dark text required: #0A0D0A on this = 6.8:1 AA. */
   --primitive-color-amber-600: #b45309; /** Saturated amber for bold accent fills — avatar backgrounds, identity badges. Contrast vs white: 5.02:1 (AA). Use via color.background.accent-amber-bold. */
   --primitive-color-amber-700: #92400e; /** Dark amber. Warning text in light-mode (DE). On white: 7.1:1 AA+. */
+  --primitive-color-amber-900: #78350f; /** Deepest amber-brown. Used as foreground.warning-dark in decision-engine — chip-on-tint warning text (e.g. OR-logic chips on amber tints) where amber.700 lacks contrast. Backported from the decisioning-table prototype (parsimony#70 §D). */
   --primitive-color-amber-950: #221b08; /** Dark amber chip fill. Dark-theme background accent — subtle chip/tag fills, callout panels with warm amber emphasis. Referenced by: color.background.accent-amber, color.background.warning-alt. */
   --primitive-icon-xs: 12px; /** 12px. Inline glyph size — icon inside a badge, status dot, or tight metadata row. */
   --primitive-icon-sm: 16px; /** 16px. Compact icon — inline with small labels, input prefix/suffix icons, tight toolbar icons. Minimum size for interactive icons. */
@@ -72,6 +85,7 @@
   --primitive-letter-spacing-tight: -0.01em; /** Slightly reduced tracking. Used for large display text where modest tracking reduction improves visual weight. Referenced by: letterSpacing.display. */
   --primitive-letter-spacing-tightest: -0.025em; /** Most reduced tracking in the system. Used for headings to tighten letter-spacing at medium display sizes. Referenced by: letterSpacing.title. */
   --primitive-letter-spacing-normal: 0em; /** Default tracking. No adjustment to the typeface's built-in letter-spacing. The baseline for all body text and most UI text. Referenced by: letterSpacing.body. */
+  --primitive-letter-spacing-subtle: 0.01em; /** Barely-open tracking — a third of `wide`. Used by the decision-engine label override: Geist at data-UI density reads better with minimal tracking than the base 0.03em. Referenced by: decision-engine letterSpacing.label. */
   --primitive-letter-spacing-wide: 0.03em; /** Slightly open tracking. Used for UI labels and navigation where a small amount of open tracking improves readability at small sizes. Referenced by: letterSpacing.label. */
   --primitive-letter-spacing-wider: 0.1em; /** Generously open tracking. For all-caps labels and display contexts where wide tracking is a deliberate typographic choice. Do not use at body sizes — wide tracking at 16px or below reads as broken text. Referenced by: letterSpacing.all-caps. */
   --primitive-duration-fast: 120ms; /** Instant feedback. Use for hover state color changes, focus ring appearance, and any interaction where the UI must feel immediately responsive. At 120ms, the transition is felt but not watched. Referenced by: motion.duration.instant. */
@@ -109,7 +123,7 @@
   --primitive-font-family-mono: 'JetBrains Mono'; /** Monospaced typeface designed for code. Optimised for readability at small sizes with clear distinction between similar characters (0/O, 1/l/I). Reserved for code blocks, inline code, and terminal-style UI elements. Referenced by: font.code. */
   --primitive-font-weight-light: 300; /** Light weight. Used for all title and display text — the low weight against large sizes creates the elegant, airy quality of the heading style. Do not use at body sizes or below; 300 at small sizes reduces legibility. Referenced by: font.title.*. */
   --primitive-font-weight-regular: 400; /** Regular weight. The default for all body copy, UI labels, code, and most interface text. Referenced by: font.body.*, font.label.*, font.code. */
-  --primitive-font-weight-medium: 500; /** Medium weight. Not currently mapped to any semantic token. Reserved for future component-level emphasis tokens (e.g., active nav label, form field label). */
+  --primitive-font-weight-medium: 500; /** Medium weight. The emphasis step for UI text — referenced by every font.label-strong.* token (active nav, button text, selected tabs, active badges) and by font.mono-label-strong-small. */
   --primitive-font-weight-semibold: 600; /** Semibold weight. Not currently mapped to any semantic token. Reserved for future strong emphasis patterns. */
   --primitive-font-weight-bold: 700; /** Bold weight. Not currently mapped to any semantic token. Reserved for future strong emphasis patterns where semibold is insufficient. */
   --primitive-font-size-xs: 0.75rem; /** 12px. Fine print, captions, meta text. The smallest size for standard UI — use sparingly and only for non-critical content. One step above font.size.2xs (10px). Referenced by: font.body.small, font.label.small, font.mono-label-small. */
@@ -124,10 +138,6 @@
   --primitive-font-line-height-snug: 1.25; /** For headings and UI labels. Enough breathing room for multi-line labels without excess space. Referenced by: font.title.medium, font.title.small, font.label.*. */
   --primitive-font-line-height-normal: 1.6; /** For standard body text. Comfortable reading rhythm at body sizes. Referenced by: font.body.*, font.code. */
   --primitive-font-line-height-relaxed: 1.7; /** For long-form prose at larger sizes (e.g., .blog body text override). Not currently mapped to a semantic token — reserved for the dot-blog brand override. */
-  --component-avatar-size-lg: 40px; /** Large avatar — 40px. Profile headers, featured items. */
-  --component-button-secondary-background-default: rgba(0, 0, 0, 0); /** No fill — the ghost button sits transparent on whatever surface it's placed on (canvas or card). */
-  --component-tag-default-background: rgba(0, 0, 0, 0); /** Transparent fill — the tag reads as an outlined label, not a solid chip. */
-  --component-tag-subtle-background: rgba(0, 0, 0, 0); /** Transparent fill — outlined label, same as default. */
   --color-background-default: var(--primitive-color-green-950); /** Base canvas #0A0D0A. Use for every page background and full-bleed section. Not for cards or elevated elements. */
   --color-background-alt: var(--primitive-color-green-900); /** Elevated surface #1E241E. Use for cards, panels, code blocks, inputs, tooltips. One subtle step above canvas. */
   --color-background-action: var(--primitive-color-green-accent); /** Interactive fill #4ADE6E. Use for filled primary buttons, selected states, active toggles. Pair with foreground.on-action. */
@@ -142,7 +152,7 @@
   --color-background-accent-sky-bold: var(--primitive-color-sky-700); /** Saturated sky blue fill for bold accent surfaces — avatar backgrounds, identity badges. Pair with foreground.accent-on-sky (white). Contrast vs white: 5.90:1 AA. */
   --color-background-accent-green-bold: var(--primitive-color-emerald-700); /** Saturated emerald fill for bold accent surfaces — avatar backgrounds, identity badges. Pair with foreground.accent-on-green (white on dark fills). Contrast vs white: 5.47:1 AA. */
   --color-background-accent-amber-bold: var(--primitive-color-amber-600); /** Saturated amber fill for bold accent surfaces — avatar backgrounds, identity badges. Pair with white text (DS debt: accent-on-amber is dark for tints). Contrast vs white: 5.02:1 AA. */
-  --color-background-danger: var(--primitive-color-red-500); /** Danger fill #E73027. Use for filled destructive buttons (delete, remove). Always pair with foreground.on-danger. */
+  --color-background-danger: var(--primitive-color-red-600); /** Danger fill #C8002E. Use for filled destructive buttons (delete, remove). Always pair with foreground.on-danger (white, 6.01:1 AA). Moved from red.500 2026-07-02: white on #E73027 was 4.33:1 (AA fail); red.600 also aligns the danger fill with decision-engine's. */
   --color-background-danger-alt: var(--primitive-color-red-950); /** Subtle danger tint #2A0A0A — dark red for error alert/badge backgrounds, matching the other feedback -alt tints. Pair with foreground.danger (light red) for text. DE overrides to a warm light-red tint. */
   --color-background-success: var(--primitive-color-green-accent); /** Strong success fill — success badges, status pills, success CTA fills. Pair with foreground.on-success (dark text). Base dark: phosphor green. */
   --color-background-success-alt: var(--primitive-color-green-chip); /** Subtle success tint — success alert/banner backgrounds. Base dark: deep green tint #0F2016. */
@@ -161,7 +171,7 @@
   --color-foreground-accent-amber: var(--primitive-color-amber-300); /** Warm amber accent #FCD34D. Use for emphasis text, icons, and labels that should read in the warm/amber family. Pair with background.accent-amber for tinted surfaces. Contrast vs background.default: ~12:1 AAA. */
   --color-foreground-on-action: var(--primitive-color-green-950); /** Text/icons on background.action #0A0D0A. Use for labels inside filled interactive components (e.g. primary button). Contrast vs action: 11.13:1 AAA. */
   --color-foreground-danger: var(--primitive-color-red-400); /** Error/destructive text and icons #F87171. Use for delete labels, validation errors, Deny outcomes, and danger alert/badge text. Light red so it reads on the canvas (7.06:1 AAA) and on the dark danger-alt tint (6.62:1 AA). Consistent with the other bright feedback foregrounds. */
-  --color-foreground-on-danger: var(--primitive-color-neutral-white); /** Text/icons on background.danger #FFFFFF. Use inside filled destructive components (e.g. filled delete button). Never on white or dark canvases. */
+  --color-foreground-on-danger: var(--primitive-color-neutral-white); /** Text/icons on background.danger #FFFFFF. Use inside filled destructive components (e.g. filled delete button). Contrast vs background.danger (red.600): 6.01:1 AA. Never on white or dark canvases. */
   --color-foreground-success: var(--primitive-color-green-accent); /** Success text and icons. Base dark: phosphor green #4ADE6E — vivid and legible on dark canvas (11.1:1 AAA). */
   --color-foreground-on-success: var(--primitive-color-green-950); /** Text/icons on success fill backgrounds. Near-black on vivid green — high contrast (11.1:1 AAA). */
   --color-foreground-warning: var(--primitive-color-amber-300); /** Warning text and icons. Base dark: amber.400 #FCD34D — bright amber on dark canvas (13.6:1 AAA). */
@@ -176,14 +186,15 @@
   --color-foreground-accent-on-sky: var(--primitive-color-neutral-white); /** Text/icons on sky accent fills. White — sky-700 provides 5.90:1 contrast (AA). */
   --color-foreground-accent-on-amber-bold: var(--primitive-color-neutral-white); /** Text/icons on amber bold accent fills (background.accent-amber-bold = amber.600 #B45309). White — 5.02:1 AA contrast. Use for avatar initials, identity badge labels on saturated amber surfaces. Do not confuse with foreground.accent-on-amber (near-black), which is for amber tint backgrounds. */
   --color-foreground-accent-on-green-bold: var(--primitive-color-neutral-white); /** Text/icons on green-bold accent fills (background.accent-green-bold = emerald.600). White — 5.47:1 AA contrast. Distinct from foreground.accent-on-green (near-black #0A0D0A), which is for the tint background. Use this for avatar initials and identity badges on saturated green surfaces. */
-  --color-border-default: var(--primitive-color-green-900); /** Standard border #1E241E. Use for card edges, input outlines, dividers. Shares value with background.alt but different intent — use border.default for lines, background.alt for filled surfaces. */
-  --color-border-elevated: var(--primitive-color-green-800); /** Structural chrome borders — headers, card frames, section dividers, prominent UI edges. One step above border-default; not interactive. Use where default borders are too invisible for the component's hierarchy. */
+  --color-border-default: var(--primitive-color-green-700); /** Standard legible border #5C685A. The default edge for most UI — input outlines, control boundaries, card edges where the edge should read. Clears the SC 1.4.11 non-text floor on the canvas (3.33:1) while staying below border.hover (6.32:1) so the state ladder holds. For deliberately quiet, decorative edges use border.alt. Changed from green.900 (#1E241E, 1.23:1 — invisible where it was the only boundary indicator) 2026-07-02, #28. */
+  --color-border-alt: var(--primitive-color-green-900); /** The quiet boundary OF a surface #1E241E — card, menu, panel, and dialog frames; decorative outlines; container edges (the previous border.default value). For separator lines WITHIN a surface (table rows, menu dividers) use border.muted, one rung below. Exempt from SC 1.4.11 (decorative, not required to identify a control) — never use as the only boundary of an interactive component. Shares value with background.alt but different intent. Rule codified 2026-07-02 from observed usage: alt = frames, muted = rows. */
+  --color-border-elevated: var(--primitive-color-green-800); /** Structural chrome borders — headers, card frames, section dividers, prominent UI edges. One step above border-alt in the decorative ladder (muted < alt < elevated); not interactive. Sits below border.default in contrast — for a legible functional edge use border.default itself. */
   --color-border-hover: var(--primitive-color-green-600); /** Border on interactive elements in hover state. Mid-toned green — clearly visible against the dark canvas, signals interactivity without using the full accent. */
   --color-border-active: var(--primitive-color-green-400); /** Border on interactive elements in active/pressed state. Lighter than hover — maximum border prominence for the held-down moment. */
   --color-border-action: var(--primitive-color-green-accent); /** Border for interactive outlined controls — the secondary (ghost) button. Vivid phosphor green #4ADE6E; a resting accent border is rule-compliant here because the control is interactive. Matches the primary button fill (filled primary vs outlined secondary). Contrast vs background.default: 11.13:1; vs background.alt: 9.02:1. */
   --color-border-focus: var(--primitive-color-green-accent); /** Focus ring color. Applied as an outline on keyboard-focused interactive elements. Vivid phosphor green — maximum visibility against the dark canvas. Always pair with a non-color indicator (outline offset) for non-color-blind users. */
   --color-border-disabled: var(--primitive-color-green-950); /** Border on disabled elements. Recedes to near-canvas — the element visually withdraws. Combine with reduced opacity on the overall component. */
-  --color-border-muted: var(--primitive-color-green-chip); /** Near-invisible hairline border for dense list and table contexts. Base dark: green.chip (#0F2016) — intentionally very subtle; use spacing + background.alt to create separation in dark contexts. */
+  --color-border-muted: var(--primitive-color-green-chip); /** Separator lines WITHIN a surface #0F2016 — table row separators, menu/list dividers, section rules inside a panel. Near-invisible hairline; the lowest rung of the decorative ladder (muted < alt < elevated). For the boundary OF a surface (card/menu/panel frames) use border.alt, one rung above. Base dark: intentionally very subtle — use spacing + background.alt to create separation in dark contexts. Rule codified 2026-07-02 from observed usage: muted = rows, alt = frames. */
   --font-family-sans: var(--primitive-font-family-sans); /** Sans-serif family for titles, labels, and UI text. Base: Space Grotesk. Decision-engine override: Geist. */
   --font-family-serif: var(--primitive-font-family-serif); /** Serif family for body and long-form prose. Base: Spectral. */
   --font-family-mono: var(--primitive-font-family-mono); /** Monospaced family for code and technical UI labels. Base: JetBrains Mono. */
@@ -213,6 +224,7 @@
   --shadow-raised: var(--primitive-shadow-sm); /** Raised elevation. Minimal lift — just enough to separate an element from its parent surface without creating strong depth. The element reads as slightly above the canvas but still close to it. Use for inputs on hover or focus, inline dropdowns, subtle interactive feedback. On a dark background, this shadow is nearly imperceptible at rest — which is correct. Resolves to: 0 1px 3px rgba(0,0,0,0.08). */
   --shadow-overlay: var(--primitive-shadow-lg); /** Overlay elevation. Strong depth cue — the element is clearly floating above the page layer. Use for context menus, popover panels, dropdown lists, and any element that temporarily overlays content without dimming the background. The jump from raised to overlay is intentionally large: there is no 'card' shadow in this system — cards use background.alt for separation instead. Resolves to: 0 6px 20px rgba(0,0,0,0.16). */
   --shadow-dialog: var(--primitive-shadow-xl); /** Dialog elevation. The maximum shadow in the system — reserved for components that must read as the highest layer regardless of page context: modals, full-screen drawers, bottom sheets, and toast notifications. The strong shadow (0 12px 40px) grounds a floating dialog against an already-dark background. Do not apply to cards, panels, or overlays — it will feel overblown. Resolves to: 0 12px 40px rgba(0,0,0,0.24). */
+  --spacing-align: var(--primitive-space-3xs); /** Optical alignment. Not a gap between two things — a correction to where one thing sits against the text beside it: a checkbox nudged to the cap-height of its label, a required asterisk set off from the word it marks, an icon lifted onto the baseline of a line of copy. At 2px it is below the threshold where the eye reads separation, which is the point; if a gap is meant to be seen, use spacing.micro. Resolves to: 2px. */
   --spacing-micro: var(--primitive-space-2xs); /** Micro spacing. For icon-to-text margins, gap between a badge and its label, and tight internal nudges within a single element. At 4px the gap signals that two things are part of the same unit — barely breathing room, not real separation. Resolves to: 4px. */
   --spacing-tight: var(--primitive-space-xs); /** Tight spacing. Between closely related items that belong to the same thought — e.g., an icon and its label, a checkbox and its text, stacked lines within a single element. At 8px, the gap is felt as belonging rather than separating. Resolves to: 8px. */
   --spacing-inline: var(--primitive-space-sm); /** Inline spacing. Between items that are related but distinct — e.g., items in a navigation row, pills in a tag group, or gaps in a horizontal list. Signals adjacency without implying the items are the same unit. Resolves to: 12px. */
@@ -246,139 +258,16 @@
   --motion-transition-standard: var(--motion-duration-standard) var(--motion-easing-default) var(--primitive-delay-none); /** Standard component transition. The workhorse composite — pair with most state changes that involve visibility or layout: dropdown menus opening, tooltips appearing, accordions expanding, tabs switching, popovers fading in. Directionless easing keeps the motion neutral so the same token can run both directions without feeling lopsided. If the element is *clearly* entering or exiting and you want to underscore that, reach for motion.easing.enter or motion.easing.exit on a custom transition instead. Resolves to: 200ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms. */
   --motion-transition-emphasized: var(--motion-duration-emphasized) var(--motion-easing-move) var(--primitive-delay-none); /** Emphasized transition for layer-shifting motion. Reserved for full-screen or near-full-screen movement where the motion itself is part of the meaning: modal entry and exit, drawer slides, full-page sheet reveals, route-level transitions. The 350ms duration gives the eye time to follow; the symmetric in-out easing reads as a deliberate slide rather than an entrance or exit, which keeps the same token usable both ways. Do not apply to small components — emphasized timing on a hover or a dropdown feels broken and slow. Resolves to: 350ms cubic-bezier(0.42, 0, 0.58, 1) 0ms. */
   --motion-transition-move: var(--motion-duration-standard) var(--motion-easing-move) var(--primitive-delay-none); /** Repositioning transition. Standard duration paired with symmetric in-out easing — the right combination for elements that travel from one position to another within the viewport without entering or exiting. Use for tab indicator underlines sliding between tabs, segmented control thumbs, accordion content shifting siblings, drag-and-drop snap, sticky header offset changes. The arc-shaped easing gives the motion a sense of weight and direction that linear or ease-out would flatten. Resolves to: 200ms cubic-bezier(0.42, 0, 0.58, 1) 0ms. */
-  --component-alert-success-background: var(--color-background-success-alt); /** Dark green tint — same as badge.success.background. Calm confirmation surface. */
-  --component-alert-success-foreground: var(--color-foreground-success); /** Phosphor green text/icon — foreground.success (#4ADE6E). Contrast vs success-alt: 11.1:1 AAA. */
-  --component-alert-success-border: var(--color-background-success-alt); /** Matches background — borderless on dark tint. */
-  --component-alert-warning-background: var(--color-background-warning-alt); /** Dark amber tint — warning-alt (#221B08). Low-alarm caution surface. */
-  --component-alert-warning-foreground: var(--color-foreground-warning); /** Vivid amber text/icon — foreground.warning (#FCD34D). Contrast vs warning-alt: 12.0:1 AAA. */
-  --component-alert-warning-border: var(--color-background-warning-alt); /** Matches background. */
-  --component-alert-danger-background: var(--color-background-danger-alt); /** Subtle error tint — danger-alt. Low alarm for banner context. */
-  --component-alert-danger-foreground: var(--color-foreground-danger); /** Red text/icon — foreground.danger (#F87171). Contrast vs danger-alt fill: 6.62:1 AA. */
-  --component-alert-danger-border: var(--color-background-danger-alt); /** Matches background — borderless, consistent with the other status variants (success/warning/info). */
-  --component-alert-info-background: var(--color-background-info-alt); /** Dark blue tint — info-alt (#0D1830). Calm informational surface. */
-  --component-alert-info-foreground: var(--color-foreground-info); /** Light blue text/icon — foreground.info (#93C5FD). Contrast vs info-alt: 7.5:1 AA. */
-  --component-alert-info-border: var(--color-background-info-alt); /** Matches background. */
-  --component-alert-radius: var(--radius-default); /** Alert corner radius — 8px. Matches cards and dropdowns; reads as a surface component, not an inline chip. */
-  --component-alert-padding-x: var(--spacing-element); /** Horizontal padding — 16px. */
-  --component-alert-padding-y: var(--spacing-inline); /** Vertical padding — 12px. */
-  --component-avatar-size-sm: var(--spacing-component); /** Small avatar — 24px. Dense layouts, inline mentions, table cells. */
-  --component-avatar-size-md: var(--spacing-group); /** Medium avatar — 32px. Default list items, comment threads. */
-  --component-avatar-size-xl: var(--spacing-layout); /** Extra-large avatar — 48px. Account settings, user profile pages. */
-  --component-avatar-background-default: var(--color-background-alt); /** Neutral avatar background — elevated surface for unknown/placeholder users. */
-  --component-avatar-background-indigo: var(--color-background-accent-indigo-bold); /** Indigo accent-bold fill. Pair with foreground.accent-on-indigo (white, 7.98:1 AAA). */
-  --component-avatar-background-sky: var(--color-background-accent-sky-bold); /** Sky accent-bold fill. Pair with foreground.accent-on-sky (white, 5.90:1 AA). */
-  --component-avatar-background-green: var(--color-background-accent-green-bold); /** Green accent-bold fill. Pair with foreground.accent-on-green-bold (white, 5.47:1 AA). */
-  --component-avatar-background-amber: var(--color-background-accent-amber-bold); /** Amber accent-bold fill. Pair with foreground.accent-on-amber-bold (white, 5.02:1 AA). */
-  --component-avatar-foreground-default: var(--color-foreground-alt); /** Initials text on the neutral background. 8.0:1 AA. */
-  --component-avatar-foreground-indigo: var(--color-foreground-accent-on-indigo); /** Initials on indigo-bold fill — white, 7.98:1 AAA. */
-  --component-avatar-foreground-sky: var(--color-foreground-accent-on-sky); /** Initials on sky-bold fill — white, 5.90:1 AA. */
-  --component-avatar-foreground-green: var(--color-foreground-accent-on-green-bold); /** Initials on green-bold fill — white, 5.47:1 AA. */
-  --component-avatar-foreground-amber: var(--color-foreground-accent-on-amber-bold); /** Initials on amber-bold fill — white, 5.02:1 AA. */
-  --component-badge-default-background: var(--color-background-alt); /** Neutral tint — uses elevated surface color, reads as a generic label without implying any status. */
-  --component-badge-default-foreground: var(--color-foreground-alt); /** Secondary foreground — legible on background.alt. Contrast: 8.0:1 AA. */
-  --component-badge-default-border: var(--color-border-default); /** Standard border — same as UI edges, visually integrates with surrounding layout. */
-  --component-badge-success-background: var(--color-background-success-alt); /** Dark green tint — background.success-alt (#0F2016). Subtle, not alarming. */
-  --component-badge-success-foreground: var(--color-foreground-success); /** Phosphor green text — foreground.success (#4ADE6E). Contrast vs success-alt: 11.1:1 AAA. */
-  --component-badge-success-border: var(--color-background-success-alt); /** Matches background — no visible border on dark tint variant. */
-  --component-badge-warning-background: var(--color-background-warning-alt); /** Dark amber tint — background.warning-alt (#221B08). Low-alarm visual treatment. */
-  --component-badge-warning-foreground: var(--color-foreground-warning); /** Vivid amber text — foreground.warning (#FCD34D). Contrast vs warning-alt: 12.0:1 AAA. */
-  --component-badge-warning-border: var(--color-background-warning-alt); /** Matches background — borderless on dark tint. */
-  --component-badge-danger-background: var(--color-background-danger-alt); /** Subtle error tint — danger-alt. Low alarm for badge context; use background.danger only for filled destructive buttons. */
-  --component-badge-danger-foreground: var(--color-foreground-danger); /** Red text — foreground.danger (#F87171). Contrast vs danger-alt fill: 6.62:1 AA. */
-  --component-badge-danger-border: var(--color-background-danger-alt); /** Matches background — borderless, consistent with the other status variants (success/warning/info). */
-  --component-badge-info-background: var(--color-background-info-alt); /** Dark blue tint — background.info-alt (#0D1830). Calm, non-urgent. */
-  --component-badge-info-foreground: var(--color-foreground-info); /** Light blue text — foreground.info (#93C5FD). Contrast vs info-alt: 7.5:1 AA. */
-  --component-badge-info-border: var(--color-background-info-alt); /** Matches background — borderless on dark tint. */
-  --component-badge-accent-green-background: var(--color-background-accent-green); /** Dark green chip fill — background.accent-green (#0F2016). */
-  --component-badge-accent-green-foreground: var(--color-foreground-accent-green); /** Phosphor green label — foreground.accent-green (#4ADE6E). Contrast: 11.1:1 AAA. */
-  --component-badge-accent-green-border: var(--color-background-accent-green); /** Matches background. */
-  --component-badge-accent-blue-background: var(--color-background-accent-blue); /** Dark blue chip fill — background.accent-blue (#0D1830). */
-  --component-badge-accent-blue-foreground: var(--color-foreground-accent-blue); /** Light blue label — foreground.accent-blue (#93C5FD). Contrast: 7.5:1 AA. */
-  --component-badge-accent-blue-border: var(--color-background-accent-blue); /** Matches background. */
-  --component-badge-accent-violet-background: var(--color-background-accent-violet); /** Dark violet chip fill — background.accent-violet (#18102E). */
-  --component-badge-accent-violet-foreground: var(--color-foreground-accent-violet); /** Light violet label — foreground.accent-violet (#C4B5FD). Contrast: 7.0:1 AA. */
-  --component-badge-accent-violet-border: var(--color-background-accent-violet); /** Matches background. */
-  --component-badge-accent-amber-background: var(--color-background-accent-amber); /** Dark amber chip fill — background.accent-amber (#221B08). */
-  --component-badge-accent-amber-foreground: var(--color-foreground-accent-amber); /** Vivid amber label — foreground.accent-amber (#FCD34D). Contrast: 12.0:1 AAA. */
-  --component-badge-accent-amber-border: var(--color-background-accent-amber); /** Matches background. */
-  --component-badge-radius: var(--radius-full); /** Badges use full pill radius (9999px) — the strong rounding distinguishes them from rectangular UI components and signals they are labels rather than interactive controls. */
-  --component-badge-padding-x: var(--spacing-inline); /** Horizontal padding — 12px left/right. Gives the label room to breathe inside the pill without becoming too wide. */
-  --component-badge-padding-y: var(--spacing-micro); /** Vertical padding — 4px top/bottom. Keeps the badge compact; height is primarily determined by font size. */
-  --component-button-primary-background-default: var(--color-background-action); /** Filled action color — blue in decision-engine, phosphor green in base theme. */
-  --component-button-primary-background-hover: var(--color-background-action-hover); /** Darkened action color on hover. */
-  --component-button-primary-background-active: var(--color-background-action-active); /** Pressed/active state — deep darkened action color. */
-  --component-button-primary-foreground-default: var(--color-foreground-on-action); /** Text/icon color on filled action background — always white in decision-engine. */
-  --component-button-primary-border-default: var(--color-background-action); /** Matches background so no visible border seam. */
-  --component-button-primary-border-hover: var(--color-background-action-hover); /** Matches hover background. */
-  --component-button-primary-border-active: var(--color-background-action-active); /** Matches active background. */
-  --component-button-secondary-background-hover: var(--color-background-alt); /** Subtle surface lift on hover — green label/border stay legible on it (9.02:1). */
-  --component-button-secondary-foreground-default: var(--color-foreground-action); /** Accent-green label #4ADE6E — signals interactivity, matches the outline. Contrast vs canvas: 11.13:1 AAA; vs background.alt hover: 9.02:1. */
-  --component-button-secondary-border-default: var(--color-border-action); /** Accent-green outline — the button's primary affordance (vs the filled primary). 11.13:1 on canvas, far above the 3:1 non-text-contrast floor. */
-  --component-button-secondary-border-hover: var(--color-border-action); /** Outline unchanged on hover — the background lift is the state signal. */
-  --component-button-danger-background-default: var(--color-background-default); /** White — danger button is outlined by default, not filled. */
-  --component-button-danger-background-hover: var(--color-background-danger-alt); /** Subtle red tint on hover signals destructive intent. */
-  --component-button-danger-foreground-default: var(--color-foreground-danger); /** Red text communicates the destructive nature of the action. */
-  --component-button-danger-border-default: var(--color-foreground-danger); /** Red border reinforces the danger signal. */
-  --component-button-danger-border-hover: var(--color-foreground-danger); /** Border unchanged on hover. */
-  --component-checkbox-background-unchecked: var(--color-background-default); /** Resting checkbox box fill — page canvas, so the border alone defines the control boundary. */
-  --component-checkbox-background-checked: var(--color-background-action); /** Filled when checked — phosphor green action color signals selection clearly. */
-  --component-checkbox-background-disabled: var(--color-background-disabled); /** Disabled box fill — elevated surface color visually recedes the control. */
-  --component-checkbox-foreground-checkmark: var(--color-foreground-on-action); /** Checkmark / indeterminate dash color — on-action (dark) on the green fill. Contrast: 11.1:1 AAA. */
-  --component-checkbox-foreground-label: var(--color-foreground-alt); /** Label text beside the checkbox — secondary foreground. Contrast vs background: 8.0:1 AA. */
-  --component-checkbox-foreground-disabled: var(--color-foreground-disabled); /** Label and box fill when disabled — deeply receded, signals non-interactivity. */
-  --component-checkbox-border-default: var(--color-border-default); /** Resting checkbox border — standard UI edge. */
-  --component-checkbox-border-hover: var(--color-border-hover); /** Checkbox border on hover — steps up to signal interactivity. */
-  --component-checkbox-border-focus: var(--color-border-focus); /** Focus ring color — phosphor green for keyboard navigation visibility. */
-  --component-checkbox-border-checked: var(--color-background-action); /** Border when checked — matches the green fill, creating a solid filled appearance. */
-  --component-checkbox-border-disabled: var(--color-border-disabled); /** Border when disabled — recedes to near-canvas. */
-  --component-checkbox-radius: var(--radius-sm); /** Checkbox corner radius — 4px. Square control with just enough softening to read as interactive rather than a data cell. */
-  --component-input-background-default: var(--color-background-default); /** Input rests on the page canvas — same color as the page background. Creates depth via border + label contrast, not background elevation. */
-  --component-input-background-hover: var(--color-background-default); /** Background unchanged on hover — border change alone communicates interactivity. */
-  --component-input-background-focus: var(--color-background-default); /** Background unchanged on focus — the focus ring carries the state signal. */
-  --component-input-background-disabled: var(--color-background-alt); /** Disabled input sits on the elevated surface color — visually recedes, communicates non-interactivity. */
-  --component-input-background-error: var(--color-background-default); /** Error state background unchanged — border color alone communicates the error. */
-  --component-input-foreground-value: var(--color-foreground-default); /** User-entered text — primary foreground, full legibility. */
-  --component-input-foreground-placeholder: var(--color-foreground-muted); /** Placeholder text — tertiary foreground. Minimum legible level. Not disabled — disabled has its own token. */
-  --component-input-foreground-label: var(--color-foreground-alt); /** Form field label above the input — secondary foreground, clearly associated but not primary content. */
-  --component-input-foreground-label-required: var(--color-foreground-danger); /** Required field asterisk or indicator — danger color signals mandatory without alarming. */
-  --component-input-foreground-helper: var(--color-foreground-muted); /** Helper text below the input — same as placeholder, tertiary level. */
-  --component-input-foreground-error: var(--color-foreground-danger); /** Inline error message text below the input. Red signals the validation failure. */
-  --component-input-foreground-disabled: var(--color-foreground-disabled); /** Text in disabled input — deeply receded, signals non-interactivity. */
-  --component-input-border-default: var(--color-border-default); /** Resting input border — the same as all UI edges. */
-  --component-input-border-hover: var(--color-border-hover); /** Input border on hover — steps up one level to signal interactivity. */
-  --component-input-border-focus: var(--color-border-focus); /** Input border on focus — phosphor green focus ring, maximum visibility for keyboard navigation. */
-  --component-input-border-error: var(--color-foreground-danger); /** Input border in error state — red communicates validation failure clearly. */
-  --component-input-border-disabled: var(--color-border-disabled); /** Input border when disabled — recedes to near-canvas. */
-  --component-input-radius: var(--radius-sm); /** Input corner radius — subtle 4px rounding. Softer than a pure rectangle but maintains the structured, precise character of the system. */
-  --component-input-padding-x: var(--spacing-element); /** Horizontal padding inside the input — 16px left/right. Provides comfortable typing clearance from the border. */
-  --component-input-padding-y: var(--spacing-tight); /** Vertical padding inside the input — 8px top/bottom. Combined with line-height creates the standard 40px input height. */
-  --component-radio-background-unchecked: var(--color-background-default); /** Resting radio background — page canvas, border defines the circle boundary. */
-  --component-radio-background-checked: var(--color-background-action); /** Inner dot fill when checked — phosphor green. */
-  --component-radio-background-disabled: var(--color-background-disabled); /** Disabled radio background — recedes the control. */
-  --component-radio-foreground-dot: var(--color-foreground-on-action); /** Inner selection dot — on-action dark on green background. Not used in current implementation (dot is the background itself). */
-  --component-radio-foreground-label: var(--color-foreground-alt); /** Label text beside the radio — secondary foreground. 8.0:1 AA. */
-  --component-radio-foreground-disabled: var(--color-foreground-disabled); /** Label and circle when disabled — deeply receded. */
-  --component-radio-border-default: var(--color-border-default); /** Resting circle border. */
-  --component-radio-border-hover: var(--color-border-hover); /** Circle border on hover. */
-  --component-radio-border-focus: var(--color-border-focus); /** Focus ring color — phosphor green. */
-  --component-radio-border-checked: var(--color-background-action); /** Circle border when checked — matches green fill. */
-  --component-radio-border-disabled: var(--color-border-disabled); /** Circle border when disabled. */
-  --component-tag-default-foreground: var(--color-foreground-alt); /** Secondary text — foreground.alt (#A0A89A). Contrast vs canvas: 8.0:1 AA. */
-  --component-tag-default-border: var(--color-foreground-muted); /** Muted-foreground border (#8B9683) — clearly visible on the page canvas. border.default is deliberately avoided here: it equals background.alt (#1E241E) and disappears against the canvas. */
-  --component-tag-subtle-foreground: var(--color-foreground-muted); /** Tertiary text — foreground.muted (#8B9683). Contrast vs canvas: 6.3:1 AA. */
-  --component-tag-subtle-border: var(--color-border-elevated); /** Raised-surface edge (#2E3A2E) — subtle but still perceptible on the canvas, a quieter outline than the default tag. */
-  --component-tag-radius: var(--radius-sm); /** Small 4px radius — square-cornered, the inverse of the badge's full pill. Signals a label/category rather than a status pill. */
-  --component-tag-padding-x: var(--spacing-tight); /** Horizontal padding — 8px. Tighter than the badge pill; suits compact uppercase labels. */
-  --component-tag-padding-y: var(--spacing-micro); /** Vertical padding — 4px. Keeps the tag compact; height is driven by font size. */
-  --component-toggle-track-background-off: var(--color-background-alt); /** Track fill when off — elevated surface. Receded but distinct from the page canvas. */
-  --component-toggle-track-background-on: var(--color-background-action); /** Track fill when on — phosphor green action color signals active state. */
-  --component-toggle-track-background-disabled: var(--color-background-disabled); /** Track fill when disabled — receded, non-interactive. */
-  --component-toggle-track-border-off: var(--color-border-default); /** Track border when off — standard UI edge. */
-  --component-toggle-track-border-on: var(--color-background-action); /** Track border when on — matches fill for seamless pill appearance. */
-  --component-toggle-track-border-disabled: var(--color-border-disabled); /** Track border when disabled — recedes to near-canvas. */
-  --component-toggle-knob-background-off: var(--color-foreground-muted); /** Knob color when off — muted foreground. Visible on the alt-background track. */
-  --component-toggle-knob-background-on: var(--color-foreground-on-action); /** Knob color when on — on-action (dark) on the green track. Contrast: 11.1:1 AAA. */
-  --component-toggle-knob-background-disabled: var(--color-foreground-disabled); /** Knob color when disabled — receded, matches disabled foreground. */
-  --component-toggle-foreground-label: var(--color-foreground-alt); /** Label text beside the toggle — secondary foreground. Contrast: 8.0:1 AA. */
-  --component-toggle-foreground-disabled: var(--color-foreground-disabled); /** Label text when disabled — deeply receded. */
+}
+
+/* Reduced motion — WCAG 2.3.3. Token-level guard: every --motion-transition-*
+   composite references these durations, so zeroing them stops token-driven
+   motion system-wide. Appended by scripts/build-brands.mjs — build/ is
+   generated, never hand-edit. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-instant: 0ms;
+    --motion-duration-standard: 0ms;
+    --motion-duration-emphasized: 0ms;
+  }
 }
