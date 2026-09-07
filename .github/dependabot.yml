@@ -25,6 +25,30 @@ updates:
         update-types:
           - minor
           - patch
+        # ...with one exception, because "one major per PR" is wrong for
+        # packages that only work in lockstep. `@vitest/ui` declares an EXACT
+        # peer on its matching `vitest`, so splitting the pair across two PRs
+        # makes each one uninstallable — `npm install` fails ERESOLVE before
+        # anything runs. That is what #35 and #36 are: the 4.1.11 -> 5.0.0 bump
+        # arriving as two halves, each conflicting with the half still on main.
+        #
+        # Vercel reports both green, which is misleading rather than reassuring:
+        # this project deploys four static files and never runs an install, so
+        # the deploy cannot see the conflict. CI is where it shows.
+        exclude-patterns:
+          - "vitest"
+          - "@vitest/*"
+      # The vitest family, kept whole. No `update-types` filter, so majors ride
+      # in this group too and the pair moves together in one installable PR.
+      # Majors are still taken by hand — dependabot-automerge skips any npm PR
+      # whose update-type is semver-major, and a group reports its highest
+      # change. This only ensures the PR can resolve, so the tests get to say
+      # whether vitest 5 works. (When vitest 3->4 finally ran here, it was a
+      # non-event: 8/8 passed unchanged.)
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
 
   # Keep the actions used in .github/workflows fresh too.
   - package-ecosystem: github-actions
